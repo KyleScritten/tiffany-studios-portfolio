@@ -1,81 +1,178 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Gallery – Tiffany Studios</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<script>(function(){var d=document.documentElement,t=null;d.classList.add("js");try{t=localStorage.getItem("theme")}catch(e){}if(t!=="dark"&&t!=="light")t=matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";d.dataset.theme=t})()</script>
-</head>
-<body id="top">
-<div class="wrap">
-<header class="top">
-  <a class="mark" href="index.html">Tiffany Studios</a>
-  <div class="hd-r"><nav aria-label="Main"><a href="index.html#work">Work</a><a href="index.html#prints">Prints</a><a href="index.html#about">About</a><a href="index.html#enquire">Enquire</a></nav><button class="theme" id="theme" type="button">Dark mode</button></div>
-</header>
-<main>
-  <section class="g-head" style="border-top:0">
-    <a class="back" href="index.html#work">Back to selected work</a>
-    <h1 id="gT"></h1>
-    <p class="cap" id="gM"></p>
-    <p id="gB" style="margin-top:1rem;max-width:54ch;color:var(--mute)"></p>
-  </section>
-  <section>
-    <div class="grid" id="gg"></div>
-    <div class="g-cta"><span>Interested in a print from this shoot?</span><a class="btn" href="index.html#enquire">Enquire about a print</a></div>
-    <a class="totop" href="#top">Back to top &uarr;</a>
-  </section>
-  <section>
-    <p class="cap">Next shoot</p>
-    <a class="next" id="nx" href="#"></a>
-    <a class="totop" href="#top">Back to top &uarr;</a>
-  </section>
-</main>
-<footer>
-  <span>© 2026 Tiffany Studios</span>
-  <span><a href="https://instagram.com/">Instagram</a> · <a href="mailto:hello@example.com">hello@example.com</a></span>
-</footer>
-</div>
-
-<dialog id="lb" aria-label="Photograph viewer">
-  <div id="lbImg"></div>
-  <div class="lb-bar">
-    <span class="cap" id="lbC"></span>
-    <div>
-      <button class="btn ghost" id="lbP" aria-label="Previous photograph">Previous</button>
-      <button class="btn ghost" id="lbN" aria-label="Next photograph">Next</button>
-      <button class="btn ghost" id="lbX">Close</button>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gallery – Tiffany Studios</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      (function () {
+        var d = document.documentElement,
+          t = null;
+        d.classList.add("js");
+        try {
+          t = localStorage.getItem("theme");
+        } catch (e) {}
+        if (t !== "dark" && t !== "light")
+          t = matchMedia("(prefers-color-scheme:dark)").matches
+            ? "dark"
+            : "light";
+        d.dataset.theme = t;
+      })();
+    </script>
+  </head>
+  <body id="top">
+    <div class="wrap">
+      <header class="top">
+        <a class="mark" href="index.html">Tiffany Studios</a>
+        <div class="hd-r">
+          <nav aria-label="Main" id="nav">
+            <a href="index.html#work">Work</a
+            ><a href="index.html#prints">Prints</a
+            ><a href="index.html#about">About</a
+            ><a href="index.html#enquire">Enquire</a>
+          </nav>
+          <button class="theme" id="theme" type="button">Dark mode</button
+          ><button
+            class="menu"
+            id="menu"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="nav"
+          >
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </header>
+      <main>
+        <section class="g-head" style="border-top: 0">
+          <a class="back" href="index.html#work">Back to selected work</a>
+          <h1 id="gT"></h1>
+          <p class="cap" id="gM"></p>
+          <p
+            id="gB"
+            style="margin-top: 1rem; max-width: 54ch; color: var(--mute)"
+          ></p>
+        </section>
+        <section>
+          <div class="grid" id="gg"></div>
+          <div class="g-cta">
+            <span>Interested in a print from this shoot?</span
+            ><a class="btn" href="index.html#enquire">Enquire about a print</a>
+          </div>
+          <a class="totop" href="#top">Back to top &uarr;</a>
+        </section>
+        <section>
+          <p class="cap">Next shoot</p>
+          <a class="next" id="nx" href="#"></a>
+          <a class="totop" href="#top">Back to top &uarr;</a>
+        </section>
+      </main>
+      <footer>
+        <span>© 2026 Tiffany Studios</span>
+        <span
+          ><a href="https://instagram.com/">Instagram</a> ·
+          <a href="mailto:hello@example.com">hello@example.com</a></span
+        >
+      </footer>
     </div>
-  </div>
-</dialog>
 
-<script src="data.js"></script>
-<script>window.addEventListener("load",function(){if(typeof works==="undefined"){var d=document.createElement("div");d.setAttribute("role","alert");d.style.cssText="position:fixed;inset:auto 1rem 1rem 1rem;z-index:99;padding:1rem 1.25rem;background:#7a2e2e;color:#fff;font:15px/1.5 system-ui,sans-serif;border-radius:4px";d.textContent="data.js was not found. Keep index.html, gallery.html, data.js and style.css together in one folder, and open the site from that folder (or host the whole folder).";document.body.appendChild(d)}});</script>
-<script>
-const el=id=>document.getElementById(id);
-const q=new URLSearchParams(location.search).get("s");
-let wi=works.findIndex(w=>w.id===q);if(wi<0)wi=0;
-const w=works[wi],ps=w.photos,nxt=works[(wi+1)%works.length];
-document.title=w.t+" – Tiffany Studios";
-el("gT").textContent=w.t;
-el("gM").textContent=w.c+", "+w.y+" · "+ps.length+" photographs";
-el("gB").textContent=w.blurb||"A short description of this shoot goes here.";
-el("nx").textContent=nxt.t;el("nx").href="gallery.html?s="+nxt.id;
-let cur=0;
-ps.forEach((p,i)=>{const b=document.createElement("button");b.className="work";
- b.setAttribute("aria-label","View photograph "+(i+1)+" of "+ps.length);
- b.appendChild(art({...p,t:w.t+", photograph "+(i+1)}));b.onclick=()=>{show(i);el("lb").showModal()};el("gg").appendChild(b)});
-function show(i){cur=(i+ps.length)%ps.length;const p=ps[cur],r=p.r||1.5,box=el("lbImg");box.innerHTML="";
- const a=art({...p,r:r,t:w.t+", photograph "+(cur+1)},"img");
- a.style.width="min(100%,"+(75*r)+"vh)";a.style.margin="0 auto";box.appendChild(a);
- el("lbC").textContent=(cur+1)+" of "+ps.length}
-el("lbP").onclick=()=>show(cur-1);el("lbN").onclick=()=>show(cur+1);el("lbX").onclick=()=>el("lb").close();
-el("lb").addEventListener("click",e=>{if(e.target===el("lb"))el("lb").close()});
-el("lb").addEventListener("keydown",e=>{if(e.key==="ArrowLeft")show(cur-1);if(e.key==="ArrowRight")show(cur+1)});
-initTheme();reveal();
-</script>
-</body>
+    <dialog id="lb" aria-label="Photograph viewer">
+      <div id="lbImg"></div>
+      <div class="lb-bar">
+        <span class="cap" id="lbC"></span>
+        <div>
+          <button class="btn ghost" id="lbP" aria-label="Previous photograph">
+            Previous
+          </button>
+          <button class="btn ghost" id="lbN" aria-label="Next photograph">
+            Next
+          </button>
+          <button class="btn ghost" id="lbX">Close</button>
+        </div>
+      </div>
+    </dialog>
+
+    <script src="data.js"></script>
+    <script>
+      window.addEventListener("load", function () {
+        if (typeof works === "undefined") {
+          var d = document.createElement("div");
+          d.setAttribute("role", "alert");
+          d.style.cssText =
+            "position:fixed;inset:auto 1rem 1rem 1rem;z-index:99;padding:1rem 1.25rem;background:#7a2e2e;color:#fff;font:15px/1.5 system-ui,sans-serif;border-radius:4px";
+          d.textContent =
+            "data.js was not found. Keep index.html, gallery.html, data.js and style.css together in one folder, and open the site from that folder (or host the whole folder).";
+          document.body.appendChild(d);
+        }
+      });
+    </script>
+    <script>
+      const el = (id) => document.getElementById(id);
+      const q = new URLSearchParams(location.search).get("s");
+      let wi = works.findIndex((w) => w.id === q);
+      if (wi < 0) wi = 0;
+      const w = works[wi],
+        ps = w.photos,
+        nxt = works[(wi + 1) % works.length];
+      document.title = w.t + " – Tiffany Studios";
+      el("gT").textContent = w.t;
+      el("gM").textContent =
+        w.c + ", " + w.y + " · " + ps.length + " photographs";
+      el("gB").textContent =
+        w.blurb || "A short description of this shoot goes here.";
+      el("nx").textContent = nxt.t;
+      el("nx").href = "gallery.html?s=" + nxt.id;
+      let cur = 0;
+      ps.forEach((p, i) => {
+        const b = document.createElement("button");
+        b.className = "work";
+        b.setAttribute(
+          "aria-label",
+          "View photograph " + (i + 1) + " of " + ps.length,
+        );
+        b.appendChild(art({ ...p, t: w.t + ", photograph " + (i + 1) }));
+        b.onclick = () => {
+          show(i);
+          el("lb").showModal();
+        };
+        el("gg").appendChild(b);
+      });
+      function show(i) {
+        cur = (i + ps.length) % ps.length;
+        const p = ps[cur],
+          r = p.r || 1.5,
+          box = el("lbImg");
+        box.innerHTML = "";
+        const a = art(
+          { ...p, r: r, t: w.t + ", photograph " + (cur + 1) },
+          "img",
+        );
+        a.style.width = "min(100%," + 75 * r + "vh)";
+        a.style.margin = "0 auto";
+        box.appendChild(a);
+        el("lbC").textContent = cur + 1 + " of " + ps.length;
+      }
+      el("lbP").onclick = () => show(cur - 1);
+      el("lbN").onclick = () => show(cur + 1);
+      el("lbX").onclick = () => el("lb").close();
+      el("lb").addEventListener("click", (e) => {
+        if (e.target === el("lb")) el("lb").close();
+      });
+      el("lb").addEventListener("keydown", (e) => {
+        if (e.key === "ArrowLeft") show(cur - 1);
+        if (e.key === "ArrowRight") show(cur + 1);
+      });
+      initTheme();
+      initMenu();
+      reveal();
+    </script>
+  </body>
 </html>
