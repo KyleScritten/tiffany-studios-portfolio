@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tiffany Studios – Fine Art Photography</title>
+<meta name="description" content="Fine art photography: landscape, portrait, concept, wedding and engagement work. Limited edition prints available.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>(function(){var d=document.documentElement,t=null;d.classList.add("js");try{t=localStorage.getItem("theme")}catch(e){}if(t!=="dark"&&t!=="light")t=matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";d.dataset.theme=t})()</script>
+</head>
+<body id="top">
+<div class="wrap">
+<header class="top">
+  <a class="mark" href="#">Tiffany Studios</a>
+  <div class="hd-r"><nav aria-label="Main"><a href="#work">Work</a><a href="#prints">Prints</a><a href="#about">About</a><a href="#enquire">Enquire</a></nav><button class="theme" id="theme" type="button">Dark mode</button></div>
+</header>
+
+<main>
+<div class="hero">
+  <div>
+    <h1>Quiet light,<br>held still.</h1>
+    <p>Fine art photography across landscape, portrait, concept, wedding and engagement work. Limited edition prints.</p>
+  </div>
+  <figure class="car" role="group" aria-roledescription="carousel" aria-label="Featured work">
+    <div class="slides" id="slides"></div>
+    <div class="car-ui">
+      <button class="cbtn" id="prev" aria-label="Previous photograph">&lsaquo;</button>
+      <div class="dots" id="dots"></div>
+      <button class="cbtn" id="next" aria-label="Next photograph">&rsaquo;</button>
+      <button class="cbtn" id="pp" aria-label="Pause slideshow" style="margin-left:auto;font-size:.8rem;width:auto;padding:0 .8rem">Pause</button>
+    </div>
+    <figcaption class="cap" id="heroCap" aria-live="polite"></figcaption>
+  </figure>
+</div>
+
+<section id="work">
+  <h2>Selected work</h2>
+  <div class="filters" role="group" aria-label="Filter by category">
+    <button aria-pressed="true" data-f="all">All</button>
+    <button aria-pressed="false" data-f="Landscape">Landscape</button>
+    <button aria-pressed="false" data-f="Portrait">Portrait</button>
+    <button aria-pressed="false" data-f="Concept">Concept</button>
+    <button aria-pressed="false" data-f="Wedding &amp; Engagement">Wedding &amp; Engagement</button>
+  </div>
+  <div class="grid" id="grid"></div>
+  <a class="totop" href="#top">Back to top &uarr;</a>
+</section>
+
+<section id="prints">
+  <h2>Prints</h2>
+  <p style="color:var(--mute);max-width:54ch;margin-bottom:2rem">Each print is made to order on archival cotton rag paper and comes signed and numbered. Choose a print to start an enquiry.</p>
+  <div class="prints" id="prints-grid"></div>
+  <a class="totop" href="#top">Back to top &uarr;</a>
+</section>
+
+<section id="about" class="about">
+  <div class="avatar" role="img" aria-label="Portrait of the photographer"><!-- Replace with: <img src="images/portrait.jpg" alt="Portrait of the photographer"> --></div>
+  <div>
+    <h2>About</h2>
+    <p>Write two or three short paragraphs here: who she is, what draws her to landscape, portrait, concept, wedding and engagement work, and how she makes a picture.</p>
+    <p>Mention where she is based, any exhibitions or publications, and how prints are produced and shipped.</p>
+    <a class="totop" href="#top">Back to top &uarr;</a>
+  </div>
+</section>
+
+<section id="enquire">
+  <h2>Enquire</h2>
+  <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" id="enq">
+    <label>Your name<input name="name" required autocomplete="name"></label>
+    <label>Email<input type="email" name="email" required autocomplete="email"></label>
+    <label>Enquiry type
+      <select name="type" id="type" required>
+        <option value="">Choose a type</option><option>Print purchase</option><option>Commission or shoot</option><option>Licensing</option><option>Something else</option>
+      </select>
+    </label>
+    <fieldset class="pf" id="printFields" hidden>
+      <label>Print size
+        <select name="print_size" required><option value="">Select size</option><option>A3 (297 × 420 mm)</option><option>A2 (420 × 594 mm)</option><option>A1 (594 × 841 mm)</option></select>
+      </label>
+      <label>Framing
+        <!-- Replace these placeholder options with her real framing options -->
+        <select name="framing" required><option value="">Select framing</option><option>Unframed</option><option>Framing option 1</option><option>Framing option 2</option></select>
+      </label>
+      <label>Quantity
+        <select name="quantity" required><option value="">Select quantity</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
+      </label>
+    </fieldset>
+    <label>Message<textarea name="message" id="msg" required></textarea></label>
+    <input type="hidden" name="_subject" value="New enquiry from the Tiffany Studios website">
+    <input class="hp" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <button class="btn" type="submit" id="send" disabled>Send enquiry</button>
+    <p id="status" role="status" aria-live="polite"></p>
+  </form>
+  <a class="totop" href="#top">Back to top &uarr;</a>
+</section>
+</main>
+
+<footer>
+  <span>© 2026 Tiffany Studios</span>
+  <span><a href="https://instagram.com/">Instagram</a> · <a href="mailto:hello@example.com">hello@example.com</a></span>
+</footer>
+</div>
+
+
+<script src="data.js"></script>
+<script>window.addEventListener("load",function(){if(typeof works==="undefined"){var d=document.createElement("div");d.setAttribute("role","alert");d.style.cssText="position:fixed;inset:auto 1rem 1rem 1rem;z-index:99;padding:1rem 1.25rem;background:#7a2e2e;color:#fff;font:15px/1.5 system-ui,sans-serif;border-radius:4px";d.textContent="data.js was not found. Keep index.html, gallery.html, data.js and style.css together in one folder, and open the site from that folder (or host the whole folder).";document.body.appendChild(d)}});</script>
+<script>
+const el=id=>document.getElementById(id);
+function render(f){const g=el("grid");g.innerHTML="";
+ works.forEach((w,i)=>{if(f!=="all"&&w.c!==f)return;
+  const b=document.createElement("a");b.className="work";b.href="gallery.html?s="+w.id;b.setAttribute("aria-label","Open the "+w.t+" gallery");
+  b.appendChild(art(w));
+  b.insertAdjacentHTML("beforeend","<b>"+w.t+"</b><span>"+w.c+", "+w.y+" · "+w.photos.length+" photographs</span>");
+  g.appendChild(b)})}
+function ask(w){el("type").value="Print purchase";el("msg").value='I\'m interested in a print of "'+w.t+'".';updateForm()}
+document.querySelectorAll(".filters button").forEach(b=>b.onclick=()=>{
+ document.querySelectorAll(".filters button").forEach(x=>x.setAttribute("aria-pressed",x===b));render(b.dataset.f)});
+prints.forEach(p=>{const w=works[p.w];const c=document.createElement("div");c.className="print";
+ c.appendChild(art({...w,r:null}));c.firstChild.style.aspectRatio="4/3";
+ c.insertAdjacentHTML("beforeend","<h3>"+w.t+"</h3><small>"+p.sizes+" · "+p.edition+"</small>");
+ const row=document.createElement("div");row.className="price";row.innerHTML="<span>"+p.price+"</span>";
+ const a=document.createElement("a");a.className="btn";a.href="#enquire";a.textContent="Enquire";a.onclick=()=>ask(w);row.appendChild(a);c.appendChild(row);el("prints-grid").appendChild(c)});
+(function(){const S=el("slides"),D=el("dots"),PP=el("pp");let n=0,t=null,playing=!matchMedia("(prefers-reduced-motion:reduce)").matches;
+ works.forEach((w,i)=>{const s=document.createElement("div");s.className="slide";s.appendChild(art({...w,r:null}));s.onclick=()=>{location.href="gallery.html?s="+w.id};S.appendChild(s);
+  const d=document.createElement("button");d.setAttribute("aria-label","Show photograph "+(i+1));d.onclick=()=>{go(i);if(playing)start()};D.appendChild(d)});
+ function go(i){n=(i+works.length)%works.length;[...S.children].forEach((s,k)=>{s.classList.toggle("on",k===n);s.setAttribute("aria-hidden",k!==n)});
+  [...D.children].forEach((d,k)=>d.setAttribute("aria-current",k===n));el("heroCap").textContent=works[n].t+", "+works[n].y}
+ function start(){stop();t=setInterval(()=>go(n+1),5000)}
+ function stop(){clearInterval(t)}
+ function sync(){PP.textContent=playing?"Pause":"Play";PP.setAttribute("aria-label",playing?"Pause slideshow":"Play slideshow")}
+ el("prev").onclick=()=>{go(n-1);if(playing)start()};el("next").onclick=()=>{go(n+1);if(playing)start()};
+ PP.onclick=()=>{playing=!playing;playing?start():stop();sync()};
+ const car=document.querySelector(".car");car.addEventListener("mouseenter",stop);car.addEventListener("focusin",stop);
+ car.addEventListener("mouseleave",()=>{if(playing)start()});car.addEventListener("focusout",()=>{if(playing)start()});
+ go(0);sync();if(playing)start();
+})();
+(function(){const f=el("enq"),type=el("type"),pf=el("printFields"),btn=el("send"),st=el("status"),sel=pf.querySelectorAll("select");
+ window.updateForm=function(){const p=type.value==="Print purchase";pf.hidden=!p;sel.forEach(x=>x.disabled=!p);btn.disabled=!f.checkValidity()};
+ f.addEventListener("input",updateForm);f.addEventListener("change",updateForm);
+ f.addEventListener("submit",async e=>{e.preventDefault();if(!f.checkValidity())return;
+  btn.disabled=true;btn.textContent="Sending…";st.textContent="";
+  try{const r=await fetch(f.action,{method:"POST",body:new FormData(f),headers:{Accept:"application/json"}});
+   if(!r.ok)throw 0;f.reset();st.textContent="Thank you. Your enquiry has been sent and you will hear back by email."}
+  catch(_){st.textContent="Your enquiry could not be sent. Please try again or email hello@example.com."}
+  btn.textContent="Send enquiry";updateForm()});
+ updateForm()})();
+initTheme();reveal();
+render("all");
+</script>
+</body>
+</html>
